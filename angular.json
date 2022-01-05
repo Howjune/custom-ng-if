@@ -1,27 +1,27 @@
 {
   "version": 1,
   "projects": {
-    "custom-ng-if": {
+    "app": {
       "projectType": "application",
-      "root": "apps/custom-ng-if",
-      "sourceRoot": "apps/custom-ng-if/src",
-      "prefix": "custom-ng-if",
+      "root": "apps/app",
+      "sourceRoot": "apps/app/src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/custom-ng-if",
-            "index": "apps/custom-ng-if/src/index.html",
-            "main": "apps/custom-ng-if/src/main.ts",
-            "polyfills": "apps/custom-ng-if/src/polyfills.ts",
-            "tsConfig": "apps/custom-ng-if/tsconfig.app.json",
+            "outputPath": "dist/apps/app",
+            "index": "apps/app/src/index.html",
+            "main": "apps/app/src/main.ts",
+            "polyfills": "apps/app/src/polyfills.ts",
+            "tsConfig": "apps/app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "apps/custom-ng-if/src/favicon.ico",
-              "apps/custom-ng-if/src/assets"
+              "apps/app/src/favicon.ico",
+              "apps/app/src/assets"
             ],
-            "styles": ["apps/custom-ng-if/src/styles.scss"],
+            "styles": ["apps/app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -40,8 +40,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "apps/custom-ng-if/src/environments/environment.ts",
-                  "with": "apps/custom-ng-if/src/environments/environment.prod.ts"
+                  "replace": "apps/app/src/environments/environment.ts",
+                  "with": "apps/app/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "custom-ng-if:build:production"
+              "browserTarget": "app:build:production"
             },
             "development": {
-              "browserTarget": "custom-ng-if:build:development"
+              "browserTarget": "app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,43 +72,43 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "custom-ng-if:build"
+            "browserTarget": "app:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/custom-ng-if/src/**/*.ts",
-              "apps/custom-ng-if/src/**/*.html"
+              "apps/app/src/**/*.ts",
+              "apps/app/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/custom-ng-if"],
+          "outputs": ["coverage/apps/app"],
           "options": {
-            "jestConfig": "apps/custom-ng-if/jest.config.js",
+            "jestConfig": "apps/app/jest.config.js",
             "passWithNoTests": true
           }
         }
       },
       "tags": []
     },
-    "custom-ng-if-e2e": {
-      "root": "apps/custom-ng-if-e2e",
-      "sourceRoot": "apps/custom-ng-if-e2e/src",
+    "app-e2e": {
+      "root": "apps/app-e2e",
+      "sourceRoot": "apps/app-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/custom-ng-if-e2e/cypress.json",
-            "devServerTarget": "custom-ng-if:serve:development"
+            "cypressConfig": "apps/app-e2e/cypress.json",
+            "devServerTarget": "app:serve:development"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "custom-ng-if:serve:production"
+              "devServerTarget": "app:serve:production"
             }
           }
         },
@@ -116,12 +116,12 @@
           "builder": "@nrwl/linter:eslint",
           "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": ["apps/custom-ng-if-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/app-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": ["custom-ng-if"]
+      "implicitDependencies": ["app"]
     }
   }
 }

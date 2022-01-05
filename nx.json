@@ -1,11 +1,11 @@
 {
-  "npmScope": "custom-ng-if",
+  "npmScope": "app",
   "affected": {
     "defaultBase": "main"
   },
   "cli": {
     "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
+    "packageManager": "yarn"
   },
   "implicitDependencies": {
     "package.json": {
@@ -45,5 +45,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "custom-ng-if"
+  "defaultProject": "app"
 }
